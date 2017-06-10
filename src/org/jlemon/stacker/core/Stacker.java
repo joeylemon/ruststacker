@@ -37,7 +37,7 @@ public class Stacker {
 			
 			Robot robot = getRobot();
 			
-			Point initial = getSlot(2, type);
+			Point initial = type.getSlot(2);
 			robot.mouseMove((int)initial.getX(), (int)initial.getY());
 			robot.mousePress(InputEvent.BUTTON1_MASK);
 			robot.mouseRelease(InputEvent.BUTTON1_MASK);
@@ -58,7 +58,7 @@ public class Stacker {
 				robot.mouseMove((int)Constant.STACK.getX(), (int)Constant.STACK.getY());
 				robot.mousePress(InputEvent.BUTTON1_MASK);
 				
-				Point slot = getSlot(i, type);
+				Point slot = type.getSlot(i);
 				robot.mouseMove((int)slot.getX(), (int)slot.getY());
 				robot.mouseRelease(InputEvent.BUTTON1_MASK);
 				
@@ -74,36 +74,6 @@ public class Stacker {
 			System.out.write("\rTask completed.               \n".getBytes());
 		}catch (Exception ex){
 			System.exit(0);
-		}
-	}
-	
-	/**
-	 * Get the location of a slot
-	 * @param slot - The slot's numerical ID
-	 * @param type - The furnace type
-	 * @return The (x, y) location of the slot
-	 */
-	public Point getSlot(int slot, FurnaceType type){
-		if(type == FurnaceType.LARGE){
-			int x = 0;
-			int y = 0;
-			if(slot <= 6){
-				x = Constant.BASE_X + ((slot - 1) * Constant.X_SLOT_DIFF);
-				y = Constant.BASE_Y;
-			}else if(slot <= 12){
-				x = Constant.BASE_X + ((slot - 7) * Constant.X_SLOT_DIFF);
-				y = Constant.BASE_Y + Constant.Y_SLOT_DIFF;
-			}else if(slot <= 18){
-				x = Constant.BASE_X + ((slot - 13) * Constant.X_SLOT_DIFF);
-				y = Constant.BASE_Y + (Constant.Y_SLOT_DIFF * 2);
-			}
-			
-			return new Point(x, y);
-		}else{
-			int x = Constant.BASE_X + ((slot - 1) * Constant.X_SLOT_DIFF);
-			int y = Constant.BASE_Y + (Constant.Y_SLOT_DIFF * 2);
-			
-			return new Point(x, y);
 		}
 	}
 	
