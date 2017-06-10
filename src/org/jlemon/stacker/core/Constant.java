@@ -20,6 +20,6 @@ public class Constant {
 	public static final int X_SLOT_DIFF = 92;
 	public static final int Y_SLOT_DIFF = 96;
 	
-	public static final int MAX_BARS = 20;
+	public static final int MAX_BARS = 30;
 
 }

@@ -71,7 +71,7 @@ public class Stacker {
 				System.out.write(progress.getBytes());
 			}
 			
-			System.out.write("\rTask completed.               \n".getBytes());
+			System.out.write("\rTask completed.                    \n".getBytes());
 		}catch (Exception ex){
 			System.exit(0);
 		}
