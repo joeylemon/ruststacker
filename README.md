@@ -5,4 +5,4 @@ A program that aids players with organizing furnaces in Rust
 http://jlemon.org/downloads/RustStacker.zip
 
 ### Usage
-![](http://i.imgur.com/i8JnNIb.png)
+![](http://i.imgur.com/eeOSDRB.png)
